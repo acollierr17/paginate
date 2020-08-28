@@ -1,0 +1,19 @@
+
+# Node
+node_modules
+
+# Source
+.eslintignore
+.eslintrc.js
+src
+test
+tsconfig.json
+
+# Output
+coverage
+package-lock.json
+
+# Other
+.DS_Store
+*.log
+.vscode
