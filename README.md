@@ -1,2 +1,2 @@
 # paginate
-Create an paginated array with a defined length of elements per page.
+Create a paginated array with a defined length of elements per page.
