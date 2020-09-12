@@ -1,7 +1,12 @@
 {
-  "name": "paginate",
+  "name": "@the-nerd-cave/paginate",
   "version": "1.0.0",
   "description": "Create a paginated array with a defined length of elements per page.",
+  "keywords": [
+    "pagination",
+    "paginate",
+    "array"
+  ],
   "main": "dist/lib/app.js",
   "typings": "dist/types/index.d.ts",
   "files": [
