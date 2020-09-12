@@ -1,5 +1,4 @@
 <div align="center">
-  <br />
   <h1>paginate</h1>
   <p>
     An npm module to create a paginated array with a defined length of elements per page.
