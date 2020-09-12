@@ -39,7 +39,7 @@ describe('test the constructor', () => {
 });
 
 describe('Paginate#getPaginatedArray', () => {
-  it('the number "3" should be on the second page"', () => {
+  it('the number "3" should be on the second page', () => {
     const paginated = new Paginate([1, 2, 3, 4], 2);
     const pages = paginated.getPaginatedArray();
     expect(pages[1]).toContain(3);
