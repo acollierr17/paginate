@@ -11,6 +11,9 @@
     <a href="https://david-dm.org/acollierr17/paginate"><img src="https://img.shields.io/david/acollierr17/paginate.svg?maxAge=3600" alt="Dependencies" /></a>
     <a href="https://www.patreon.com/acollierr17"><img src="https://img.shields.io/badge/donate-patreon-F96854.svg" alt="Patreon" /></a>
   </p>
+  <p>
+    <a href="https://nodei.co/npm/@the-nerd-cave/paginate/"><img src="https://nodei.co/npm/@the-nerd-cave/paginate.png?downloads=true&stars=true" alt="npm installnfo" /></a>
+  </p>
 </div>
 
 ## Example
