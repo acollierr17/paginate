@@ -1,7 +1,5 @@
 /**
  * The class for creating paginated arrays.
- * @template T
- * @extends {Array<T>}
  */
 export class Paginate<T> {
   /**
