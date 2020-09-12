@@ -7,10 +7,15 @@
     "paginate",
     "array"
   ],
-  "main": "dist/lib/app.js",
+  "main": "dist/lib/index.js",
   "typings": "dist/types/index.d.ts",
+  "exports": {
+    "import": "./esm/index.mjs",
+    "require": "./dist/lib/index.js"
+  },
   "files": [
-    "dist"
+    "dist",
+    "esm"
   ],
   "scripts": {
     "lint": "eslint ./src ./test --ext .ts",
