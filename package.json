@@ -4,13 +4,8 @@
   "description": "Create a paginated array with a defined length of elements per page.",
   "main": "dist/lib/app.js",
   "typings": "dist/types/index.d.ts",
-  "exports": {
-    "import": "./esm/index.mjs",
-    "require": "./dist/index.js"
-  },
   "files": [
-    "dist",
-    "esm"
+    "dist"
   ],
   "scripts": {
     "lint": "eslint ./src ./test --ext .ts",
