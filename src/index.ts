@@ -1,3 +1,4 @@
+// noinspection SuspiciousTypeOfGuard
 /**
  * The class for creating paginated arrays.
  */
@@ -19,10 +20,10 @@ export class Paginate<T> {
     this.array = array;
     this.size = size;
 
-    if (!Array.isArray(this.array))
-      throw new Error('You must pass in a valid Array object!');
-    if (typeof this.size !== 'number')
-      throw new Error('You must pass in a valid number for the page size!');
+    if (!Array.isArray(this.array) || !this.array)
+      throw new Error(`You must pass in a valid Array object! (Current type: ${typeof this.array})`);
+    if ((typeof this.size !== 'number') || !this.size)
+      throw new Error(`You must pass in a valid number for the page size! (Current type: ${typeof this.size})`);
     if (!this.array.length || (this.array.length === 0))
       throw new Error('There must be at least (1) one element in the array!');
     if (this.size < 1)
