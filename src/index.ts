@@ -1,6 +1,7 @@
 // noinspection SuspiciousTypeOfGuard
 /**
  * The class for creating paginated arrays.
+ * @template T
  */
 export class Paginate<T> {
   /**
