@@ -65,7 +65,7 @@ export class Paginate<T> {
    */
   public getPaginatedArray(): Array<Array<T>> {
     return Array.from(
-      { length: Math.ceil(this.array.length) / this.size },
+      { length: Math.ceil(this.array.length / this.size) },
       (_, i) => this.getElementsAtPage(i)
     );
   }
