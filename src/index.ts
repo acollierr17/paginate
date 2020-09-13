@@ -1,4 +1,4 @@
-// noinspection SuspiciousTypeOfGuard
+// noinspection SuspiciousTypeOfGuard,JSUnusedGlobalSymbols
 /**
  * The class for creating paginated arrays.
  * @template T
@@ -17,20 +17,46 @@ export class Paginate<T> {
    * @param {Array<T>} array The array that will be used to generate a paginated array.
    * @param {number} size The amount of elements to display per page.
    */
-  constructor(array: Array<T>, size: number) {
+  constructor(array: Array<T> = [], size = 1) {
     this.array = array;
     this.size = size;
 
     if (!Array.isArray(this.array) || !this.array)
       throw new Error(`You must pass in a valid Array object! (Current type: ${typeof this.array})`);
-    if ((typeof this.size !== 'number') || !this.size)
+    if (typeof this.size !== 'number')
       throw new Error(`You must pass in a valid number for the page size! (Current type: ${typeof this.size})`);
-    if (!this.array.length || (this.array.length === 0))
+  }
+
+  /**
+   * Sets the array of the Paginate class.
+   * @param {Array<T>} array The array to set.
+   * @returns {Paginate<T>} Returns the Paginate class.
+   */
+  public setArray(array: Array<T>): Paginate<T> {
+    if (!Array.isArray(array) || !array)
+      throw new Error(`You must pass in a valid Array object! (Current type: ${typeof array})`);
+    if (array.length === 0)
       throw new Error('There must be at least (1) one element in the array!');
-    if (this.size < 1)
+
+    this.array = array;
+    return this;
+  }
+
+  /**
+   * Sets the page size of the Paginate class.
+   * @param {number} size The size to set.
+   * @returns {Paginate<T>} Returns the Paginate class.
+   */
+  public setSize(size: number): Paginate<T> {
+    if (typeof size !== 'number')
+      throw new Error(`You must pass in a valid number for the page size! (Current type: ${typeof size})`);
+    if (size < 1)
       throw new Error('The size of elements per page must be at least (1) one!');
-    if (this.size > this.array.length)
+    if (size > this.array.length)
       throw new Error('The size of elements per page cannot be greater than the elements in the array!');
+
+    this.size = size;
+    return this;
   }
 
   /**
