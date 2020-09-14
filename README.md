@@ -1,4 +1,4 @@
-<div align="center">
+<div style="text-align: center;">
   <h1>paginate</h1>
   <p>
     An npm module to create a paginated array with a defined length of elements per page.
@@ -26,7 +26,7 @@ import { Paginate } from '@the-nerd-cave/paginate';
 const { Paginate } = require('@the-nerd-cave/paginate');
 ```
 
-Here is some basic usage of the module.
+Then to use the module, we're going to need an array object:
 ```js
 const arr = [
   { name: 'John Doe', age: 21 },
@@ -39,9 +39,24 @@ const arr = [
   { name: 'Bob Dylan', age: 19 },
   { name: 'Bob Dylan', age: 19 }
 ];
+```
 
+You can generate a new paginated array multiple ways:
+```js
+// Pass values via the constructor
 const paginated = new Paginate(arr, 3);
+
+// Pass values using methods
+const paginated = new Paginate()
+    .setArray(arr)
+    .setSize(3);
+```
+
+Then to access the generated pages, use the `Paginate#getPaginatedArray()` method:
+```js
+// Get the new paginated array
 const pages = paginated.getPaginatedArray();
 
+// You can access whichever page you like by passing in the index
 console.log(pages[0]); // [{ name: 'John Doe', age: 21 }, { name: 'John Doe', age: 21 }, { name: 'John Doe', age: 21 }]
 ```
