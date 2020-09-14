@@ -64,10 +64,19 @@ export class Paginate<T> {
    * @returns {Array<Array<T>>} Returns the new paginated array.
    */
   public getPaginatedArray(): Array<Array<T>> {
-    return Array.from(
-      { length: Math.ceil(this.array.length / this.size) },
-      (_, i) => this.getElementsAtPage(i)
-    );
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    return [...this.pageGenerator()];
+  }
+
+  private *pageGenerator(): Generator<Array<T>, void, Array<T>> {
+    const pages = Math.ceil(this.array.length / this.size);
+    for (let page = 0; page < pages; page++) {
+      const start = Math.max(this.getPageStart(page), 0);
+      const end = Math.min(this.getPageStart(page + 1), this.array.length);
+
+      yield this.array.slice(start, end);
+    }
   }
 
   /**
@@ -77,24 +86,5 @@ export class Paginate<T> {
    */
   private getPageStart(page: number): number {
     return this.size * page;
-  }
-
-  /**
-   * Gets all the elements at a specific page.
-   * @param {number} page The page to get.
-   * @returns {Array<T>} All the elements a specific page. 
-   */
-  private getElementsAtPage(page: number): Array<T> {
-    const start = Math.max(
-      this.getPageStart(page),
-      0
-    );
-
-    const end = Math.min(
-      this.getPageStart(page + 1),
-      this.array.length
-    );
-
-    return this.array.slice(start, end);
   }
 }
