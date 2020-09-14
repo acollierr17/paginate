@@ -60,3 +60,5 @@ const pages = paginated.getPaginatedArray();
 // You can access whichever page you like by passing in the index
 console.log(pages[0]); // [{ name: 'John Doe', age: 21 }, { name: 'John Doe', age: 21 }, { name: 'John Doe', age: 21 }]
 ```
+
+To test this live, clone this repository and go to the `example` directory. From there, run `npm test`.
