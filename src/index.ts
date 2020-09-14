@@ -35,7 +35,7 @@ export class Paginate<T> {
   public setArray(array: Array<T>): Paginate<T> {
     if (!Array.isArray(array) || !array)
       throw new Error(`You must pass in a valid Array object! (Current type: ${typeof array})`);
-    if (array.length === 0)
+    if (!array.length)
       throw new Error('There must be at least (1) one element in the array!');
 
     this.array = array;
