@@ -30,7 +30,7 @@ export class Paginate<T> {
   /**
    * Sets the array of the Paginate class.
    * @param {Array<T>} array The array to set.
-   * @returns {Paginate<T>} Returns the Paginate class.
+   * @returns {Paginate<T>}
    */
   public setArray(array: Array<T>): Paginate<T> {
     if (!Array.isArray(array) || !array)
@@ -45,7 +45,7 @@ export class Paginate<T> {
   /**
    * Sets the page size of the Paginate class.
    * @param {number} size The size to set.
-   * @returns {Paginate<T>} Returns the Paginate class.
+   * @returns {Paginate<T>}
    */
   public setSize(size: number): Paginate<T> {
     if (typeof size !== 'number')
@@ -61,7 +61,7 @@ export class Paginate<T> {
 
   /**
    * Gets the new paginated array with the defined amount of elements per page.
-   * @returns {Array<Array<T>>} Returns the new paginated array.
+   * @returns {Array<Array<T>>}
    */
   public getPaginatedArray(): Array<Array<T>> {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
@@ -82,7 +82,7 @@ export class Paginate<T> {
   /**
    * Gets the first array element of the current page.
    * @param {number} page The page to get.
-   * @returns {number} The first element of the current page.
+   * @returns {number}
    */
   private getPageStart(page: number): number {
     return this.size * page;
