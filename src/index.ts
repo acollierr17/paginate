@@ -22,9 +22,9 @@ export class Paginate<T> {
     this.size = size;
 
     if (!Array.isArray(this.array) || !this.array)
-      throw new Error(`You must pass in a valid Array object! (Current type: ${typeof this.array})`);
+      throw new TypeError(`You must pass in a valid Array object! (Current type: ${typeof this.array})`);
     if (typeof this.size !== 'number')
-      throw new Error(`You must pass in a valid number for the page size! (Current type: ${typeof this.size})`);
+      throw new TypeError(`You must pass in a valid number for the page size! (Current type: ${typeof this.size})`);
   }
 
   /**
@@ -34,9 +34,9 @@ export class Paginate<T> {
    */
   public setArray(array: Array<T>): Paginate<T> {
     if (!Array.isArray(array) || !array)
-      throw new Error(`You must pass in a valid Array object! (Current type: ${typeof array})`);
+      throw new TypeError(`You must pass in a valid Array object! (Current type: ${typeof array})`);
     if (!array.length)
-      throw new Error('There must be at least (1) one element in the array!');
+      throw new RangeError('There must be at least (1) one element in the array!');
 
     this.array = array;
     return this;
@@ -49,11 +49,11 @@ export class Paginate<T> {
    */
   public setSize(size: number): Paginate<T> {
     if (typeof size !== 'number')
-      throw new Error(`You must pass in a valid number for the page size! (Current type: ${typeof size})`);
+      throw new TypeError(`You must pass in a valid number for the page size! (Current type: ${typeof size})`);
     if (size < 1)
-      throw new Error('The size of elements per page must be at least (1) one!');
+      throw new RangeError('The size of elements per page must be at least (1) one!');
     if (size > this.array.length)
-      throw new Error('The size of elements per page cannot be greater than the elements in the array!');
+      throw new RangeError('The size of elements per page cannot be greater than the elements in the array!');
 
     this.size = size;
     return this;
